@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">KotlinWeather</string>
+
+    <string name="drawer_today">Today</string>
+    <string name="drawer_forecast">Forecast</string>
+</resources>

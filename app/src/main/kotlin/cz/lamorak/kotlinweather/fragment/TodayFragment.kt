@@ -1,0 +1,7 @@
+package cz.lamorak.kotlinweather.fragment
+
+import android.support.v4.app.Fragment
+
+public class TodayFragment : Fragment() {
+    
+}
