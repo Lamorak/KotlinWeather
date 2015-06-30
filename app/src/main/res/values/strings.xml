@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">KotlinWeather</string>
+    <string name="app_name">Kotlin Weather</string>
 
+    <string name="drawer_header_text">This application does not contain single Java file.</string>
     <string name="drawer_today">Today</string>
     <string name="drawer_forecast">Forecast</string>
 </resources>

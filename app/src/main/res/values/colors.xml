@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primaryColor">#7fa5e3</color>
-    <color name="primaryColorDark">#6684b6</color>
+    <color name="color_primary">#7fa5e3</color>
+    <color name="color_primary_dark">#6684b6</color>
+
+    <!-- Drawer colors -->
+    <color name="drawer_text">#333333</color>
+    <color name="drawer_text_selected">#99b7e9</color>
+
+    <!-- Today screen colors -->
+    <color name="divider_today">#dedede</color>
 </resources>

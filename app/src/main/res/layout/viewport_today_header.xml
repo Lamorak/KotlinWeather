@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/today_header_width"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/conditions_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/today_icon_margin"
+        android:layout_marginBottom="@dimen/today_icon_margin"
+        android:background="@drawable/ic_overlay_weather_status_today" />
+
+    <TextView
+        android:id="@+id/city_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prague, Czech Republic"
+        style="@style/TextAppearance.TodayCityLabel" />
+
+    <TextView
+        android:id="@+id/temperature_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="25°C"
+        style="@style/TextAppearance.TodayConditionsLabel"/>
+
+    <TextView
+        android:id="@+id/conditions_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thunderstorm with light rain "
+        style="@style/TextAppearance.TodayConditionsLabel" />
+
+</LinearLayout>

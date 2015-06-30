@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    style="@style/VerticalPortrait">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        style="@style/HorizontalPortrait">
+
+        <TextView
+            android:id="@+id/detail_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_weather_humidity"
+            android:text="57%"
+            style="@style/TextAppearance.TodayDetailLabel" />
+
+        <TextView
+            android:id="@+id/detail_precipitation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_weather_precipitation"
+            android:text="0 mm"
+            style="@style/TextAppearance.TodayDetailLabel" />
+
+        <TextView
+            android:id="@+id/detail_pressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_weather_pressure"
+            android:text="1019 hPa"
+            style="@style/TextAppearance.TodayDetailLabel" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        style="@style/HorizontalPortrait">
+
+        <TextView
+            android:id="@+id/detail_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_weather_wind_speed"
+            android:text="20 km/h"
+            style="@style/TextAppearance.TodayDetailLabel" />
+
+        <TextView
+            android:id="@+id/detail_direction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_weather_direction"
+            android:text="NE"
+            style="@style/TextAppearance.TodayDetailLabel" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cz.lamorak.weather.android.activity.MainActivity$PlaceholderFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            style="@style/VerticalPortrait">
+
+            <include
+                layout="@layout/viewport_today_header" />
+
+            <View
+                android:layout_width="@dimen/today_divider_length"
+                android:layout_height="@dimen/today_divider_width"
+                android:layout_gravity="center"
+                style="@style/AppTheme.TodayDivider" />
+
+            <include
+                layout="@layout/viewport_today_detail" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

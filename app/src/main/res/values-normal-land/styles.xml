@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- These styles are used to change LinearLayout orientation based on device orientation -->
+    <style name="VerticalPortrait">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="HorizontalPortrait">
+        <item name="android:orientation">vertical</item>
+    </style>
+</resources>

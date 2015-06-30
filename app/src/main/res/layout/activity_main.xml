@@ -19,19 +19,22 @@
             app:theme="@style/AppTheme.Toolbar" />
 
         <FrameLayout
-            android:id="@+id/fragmentContainer"
+            android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:foreground="@drawable/toolbar_shadow" />
 
     </LinearLayout>
 
+        <!--app:itemBackground="?attr/selectableItemBackground"-->
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="@dimen/drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:menu="@menu/drawer"
+        app:itemTextColor="@color/drawer_item"
+        app:itemIconTint="@color/drawer_item"
         app:headerLayout="@layout/drawer_header" />
 
 </android.support.v4.widget.DrawerLayout>

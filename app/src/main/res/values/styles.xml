@@ -1,4 +1,17 @@
 <resources>
 
+    <style name="AppTheme.TodayDivider">
+        <item name="android:layout_margin">@dimen/today_divider_margin</item>
+        <item name="android:background">@color/divider_today</item>
+    </style>
+
+    <!-- These styles are used to change LinearLayout orientation based on device orientation -->
+    <style name="VerticalPortrait">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="HorizontalPortrait">
+        <item name="android:orientation">horizontal</item>
+    </style>
 
 </resources>

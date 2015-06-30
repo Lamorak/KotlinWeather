@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/navigation_item_1"
-        android:checked="true"
-        android:icon="@drawable/ic_drawer_today_dark"
-        android:title="@string/drawer_today"/>
-    <item
-        android:id="@+id/navigation_item_2"
-        android:icon="@drawable/ic_drawer_forecast_dark"
-        android:title="@string/drawer_forecast"/>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_item_1"
+            android:icon="@drawable/ic_drawer_today_dark"
+            android:title="@string/drawer_today"/>
+        <item
+            android:id="@+id/navigation_item_2"
+            android:icon="@drawable/ic_drawer_forecast_dark"
+            android:title="@string/drawer_forecast"/>
+    </group>
 </menu>

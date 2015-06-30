@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance"></style>
+
+    <style name="TextAppearance.DrawerHeaderLabel">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFF</item>
+    </style>
+
+    <style name="TextAppearance.TodayCityLabel">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">#404040</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="TextAppearance.TodayConditionsLabel">
+        <item name="android:textSize">33dp</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="TextAppearance.TodayDetailLabel">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">#404040</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:minWidth">@dimen/today_detail_minwidth</item>
+        <item name="android:layout_marginTop">@dimen/today_detail_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/today_detail_vertical_margin</item>
+        <item name="android:layout_marginLeft">@dimen/today_detail_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/today_detail_horizontal_margin</item>
+        <item name="android:drawablePadding">@dimen/today_detail_drawable_margin</item>
+    </style>
+</resources>

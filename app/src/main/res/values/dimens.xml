@@ -4,4 +4,15 @@
     <!-- Navigation drawer dimensions -->
     <dimen name="drawer_width">264dp</dimen>  <!-- may differ! -->
 
+    <!-- Today screen dimensions -->
+    <dimen name="today_header_width">280dp</dimen>  <!-- may differ! -->
+    <dimen name="today_icon_margin">32dp</dimen>  <!-- may differ! -->
+    <dimen name="today_detail_minwidth">90dp</dimen>
+    <dimen name="today_detail_horizontal_margin">4dp</dimen>
+    <dimen name="today_detail_vertical_margin">16dp</dimen>  <!-- may differ! -->
+    <dimen name="today_detail_drawable_margin">4dp</dimen>
+    <dimen name="today_divider_width">2dp</dimen> <!-- may differ! -->
+    <dimen name="today_divider_length">90dp</dimen> <!-- may differ! -->
+    <dimen name="today_divider_margin">31dp</dimen> <!-- may differ! -->
+
 </resources>
