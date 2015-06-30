@@ -27,6 +27,9 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:design:22.2.0'
+    compile 'com.github.salomonbrys.kotson:kotson:1.2.0'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'org.jetbrains.anko:anko:0.6.2-15s'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 
