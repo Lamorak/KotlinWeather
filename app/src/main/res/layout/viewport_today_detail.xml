@@ -12,19 +12,19 @@
         style="@style/HorizontalPortrait">
 
         <TextView
-            android:id="@+id/detail_humidity"
+            android:id="@+id/detail_clouds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableTop="@drawable/ic_weather_humidity"
-            android:text="57%"
+            android:text="0%"
             style="@style/TextAppearance.TodayDetailLabel" />
 
         <TextView
-            android:id="@+id/detail_precipitation"
+            android:id="@+id/detail_humidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableTop="@drawable/ic_weather_precipitation"
-            android:text="0 mm"
+            android:text="57%"
             style="@style/TextAppearance.TodayDetailLabel" />
 
         <TextView
