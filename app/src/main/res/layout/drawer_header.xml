@@ -23,7 +23,7 @@
         android:layout_height="?attr/actionBarSize"
         app:navigationIcon="?attr/homeAsUpIndicator"
         app:title="@string/app_name"
-        app:theme="@style/AppTheme.Toolbar" />
+        android:theme="@style/AppTheme.Toolbar" />
 
     <TextView
         android:layout_width="match_parent"
