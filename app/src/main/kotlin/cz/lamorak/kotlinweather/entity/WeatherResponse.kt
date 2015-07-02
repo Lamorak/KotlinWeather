@@ -1,30 +1,10 @@
 package cz.lamorak.kotlinweather.entity
 
-data class WeatherResponse() {
-    val main = Main()
-    val weather = Array(1, {Weather()})
-    val wind = Wind()
-    val clouds = Clouds()
-
-    data class Main() {
-        val temp = 0f
-        val pressure = 0
-        val humidity = 0
-    }
-
-    data class Weather() {
-        val main = ""
-        val icon = ""
-    }
-
-    data class Wind() {
-        val speed = 0f
-        val deg = 0
-    }
-
-    data class Clouds() {
-        val all = 0
-    }
+data class WeatherResponse(
+        val main: Main = Main(),
+        val weather: Array<Weather> = Array(1, { Weather() }),
+        val wind: Wind = Wind(),
+        val clouds: Clouds = Clouds()) {
 
     fun icon(): String {
         return "http://openweathermap.org/img/w/${weather.get(0).icon}.png"
@@ -56,7 +36,7 @@ data class WeatherResponse() {
     }
 
     fun windDirection(): String {
-        when(wind.deg) {
+        when (wind.deg) {
             in 23..67 -> return "NE"
             in 68..112 -> return "E"
             in 113..157 -> return "SE"
@@ -67,7 +47,27 @@ data class WeatherResponse() {
             else -> return "N"
         }
     }
- }
+}
+
+data class Main(
+        val temp: Float = 0f,
+        val pressure: Int = 0,
+        val humidity: Int = 0
+)
+
+data class Weather(
+        val main: String = "",
+        val icon: String = ""
+)
+
+data class Wind(
+        val speed: Float = 0f,
+        val deg: Int = 0
+)
+
+data class Clouds(
+        val all: Int = 0
+)
 
 
 
