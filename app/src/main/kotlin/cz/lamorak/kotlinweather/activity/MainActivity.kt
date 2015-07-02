@@ -38,10 +38,13 @@ public class MainActivity : AppCompatActivity(), OnNavigationItemSelectedListene
     override fun onNavigationItemSelected(menuItem: MenuItem?): Boolean {
         if (menuItem?.isChecked() ?: true) return false
 
-        val fragmentTransaction = getSupportFragmentManager().beginTransaction()
+        val fragmentManaget = getSupportFragmentManager()
         when (menuItem?.getItemId()) {
             R.id.navigation_item_1 -> {
-                fragmentTransaction.replace(R.id.fragment_container, TodayFragment.newInstance()).commit()
+                val fragment = fragmentManaget.findFragmentByTag(TodayFragment.tag()) ?: TodayFragment.newInstance()
+                fragmentManaget.beginTransaction()
+                        .replace(R.id.fragment_container, fragment, TodayFragment.tag())
+                        .commit()
             }
         }
 
