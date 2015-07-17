@@ -24,14 +24,7 @@ public class TodayFragment : Fragment(), AnkoLogger {
     var weatherResponse: WeatherResponse? = null
 
     companion object {
-        fun newInstance() : TodayFragment {
-            val fragment = TodayFragment()
-            return fragment
-        }
-
-        fun tag() : String {
-            return "today_fragment"
-        }
+        val tag = "today_fragment"
     }
 
     override fun onCreate(args: Bundle?) {
