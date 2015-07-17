@@ -12,8 +12,9 @@ import com.squareup.okhttp.Request
 import com.squareup.picasso.Picasso
 import cz.lamorak.kotlinweather.R
 import cz.lamorak.kotlinweather.entity.WeatherResponse
-import kotlinx.android.synthetic.viewport_today_header.view.*
-import kotlinx.android.synthetic.viewport_today_detail.view.*
+import kotlinx.android.synthetic.*
+import kotlinx.android.synthetic.viewport_today_header.*
+import kotlinx.android.synthetic.viewport_today_detail.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.async
 import org.jetbrains.anko.uiThread
@@ -49,6 +50,11 @@ public class TodayFragment : Fragment(), AnkoLogger {
         initView()
     }
 
+    override fun onDestroyView() {
+        super<Fragment>.onDestroyView()
+        clearFindViewByIdCache()
+    }
+
     fun loadForecast() {
         async {
             val request = Request.Builder().url("http://api.openweathermap.org/data/2.5/weather?q=Prague").build()
@@ -63,14 +69,13 @@ public class TodayFragment : Fragment(), AnkoLogger {
 
     fun initView() {
         info { weatherResponse }
-        val view = getView()
-        Picasso.with(getActivity()).load(weatherResponse?.icon()).into(view.conditions_icon)
-        view.temperature_label.setText(weatherResponse?.temperature())
-        view.conditions_label.setText(weatherResponse?.description())
-        view.detail_clouds.setText(weatherResponse?.cloudines())
-        view.detail_humidity.setText(weatherResponse?.humidity())
-        view.detail_pressure.setText(weatherResponse?.pressure())
-        view.detail_wind.setText(weatherResponse?.windSpeed())
-        view.detail_direction.setText(weatherResponse?.windDirection())
+        Picasso.with(getActivity()).load(weatherResponse?.icon()).into(conditions_icon)
+        temperature_label.setText(weatherResponse?.temperature())
+        conditions_label.setText(weatherResponse?.description())
+        detail_clouds.setText(weatherResponse?.cloudines())
+        detail_humidity.setText(weatherResponse?.humidity())
+        detail_pressure.setText(weatherResponse?.pressure())
+        detail_wind.setText(weatherResponse?.windSpeed())
+        detail_direction.setText(weatherResponse?.windDirection())
     }
 }
