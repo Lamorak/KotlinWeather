@@ -9,8 +9,10 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import cz.lamorak.kotlinweather.R
+import cz.lamorak.kotlinweather.fragment.ForecastFragment
 import cz.lamorak.kotlinweather.fragment.TodayFragment
 import kotlinx.android.synthetic.activity_main.*
+import org.jetbrains.anko.defaultSharedPreferences
 import kotlin.properties.Delegates
 
 public class MainActivity : AppCompatActivity(), OnNavigationItemSelectedListener {
@@ -31,7 +33,8 @@ public class MainActivity : AppCompatActivity(), OnNavigationItemSelectedListene
         }
 
         navigation_view.setNavigationItemSelectedListener(this)
-        val menuItem = navigation_view.getMenu().findItem(R.id.navigation_item_1)
+        val id = defaultSharedPreferences.getInt("drawer_selected_item", R.id.navigation_item_1)
+        val menuItem = navigation_view.getMenu().findItem(id)
         onNavigationItemSelected(menuItem)
     }
 
@@ -39,16 +42,26 @@ public class MainActivity : AppCompatActivity(), OnNavigationItemSelectedListene
         if (menuItem?.isChecked() ?: true) return false
 
         val fragmentManager = getSupportFragmentManager()
+        var fragment = Fragment()
+        var tag = ""
         when (menuItem?.getItemId()) {
             R.id.navigation_item_1 -> {
-                val fragment = fragmentManager.findFragmentByTag(TodayFragment.tag) ?: TodayFragment()
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, fragment, TodayFragment.tag)
-                        .commit()
+                tag = TodayFragment.tag
+                fragment = fragmentManager.findFragmentByTag(tag) ?: TodayFragment()
+            }
+            R.id.navigation_item_2 -> {
+                tag = ForecastFragment.tag
+                fragment = fragmentManager.findFragmentByTag(tag) ?: ForecastFragment()
             }
         }
+        fragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment, tag)
+                .commit()
 
         menuItem?.setChecked(true)
+        var editor = defaultSharedPreferences.edit()
+        editor.putInt("drawer_selected_item", menuItem?.getItemId() ?: R.id.navigation_item_1)
+        editor.apply()
         drawer_layout.closeDrawers()
         return true
     }
