@@ -5,20 +5,28 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.squareup.picasso.Picasso
 import cz.lamorak.kotlinweather.R
+import cz.lamorak.kotlinweather.api.ForecastResponse
 import kotlinx.android.synthetic.item_forecast.view.*
 
 public class ForecastAdapter : RecyclerView.Adapter<ViewHolder> {
 
     var ctx : Context? = null
+    var items : Array<ForecastResponse.ForecastEntry>? = null
 
-    constructor(ctx: Context?) : super() {
+    constructor(ctx: Context?, items: Array<ForecastResponse.ForecastEntry>?) : super() {
         this.ctx = ctx
+        this.items = items
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder?, position: Int) {
         val view = viewHolder?.itemView
-        view?.forecast_day?.setText("${position} Mon")
+        val entry = items?.get(position)
+        Picasso.with(ctx).load(entry?.icon()).into(view?.forecast_icon)
+        view?.forecast_day?.setText(entry?.day())
+        view?.forecast_temperature?.setText(entry?.temperature())
+        view?.forecast_conditions?.setText(entry?.description())
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, position: Int): ViewHolder? {
@@ -27,7 +35,7 @@ public class ForecastAdapter : RecyclerView.Adapter<ViewHolder> {
     }
 
     override fun getItemCount(): Int {
-        return 30
+        return items?.size() ?: 0
     }
 }
 

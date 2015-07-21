@@ -1,10 +1,13 @@
-package cz.lamorak.kotlinweather.entity
+package cz.lamorak.kotlinweather.api
+
+import java.lang
 
 data class WeatherResponse(
-        val main: Main = Main(),
-        val weather: Array<Weather> = Array(1, { Weather() }),
-        val wind: Wind = Wind(),
-        val clouds: Clouds = Clouds()) {
+        val main: WeatherResponse.Main = WeatherResponse.Main(),
+        val weather: Array<WeatherResponse.Weather> = Array(0, { WeatherResponse.Weather() }),
+        val wind: WeatherResponse.Wind = WeatherResponse.Wind(),
+        val clouds: WeatherResponse.Clouds = WeatherResponse.Clouds()
+) {
 
     fun icon(): String {
         return "http://openweathermap.org/img/w/${weather.get(0).icon}.png"
@@ -12,11 +15,11 @@ data class WeatherResponse(
 
     fun temperature(): String {
         val temperature = main.temp - 273.15f
-        return "${java.lang.String.format("%.1f", temperature)}°C"
+        return "${lang.String.format("%.1f", temperature)}°C"
     }
 
     fun description(): String {
-        return weather.get(0).main
+        return weather.get(0).description
     }
 
     fun cloudines(): String {
@@ -47,27 +50,27 @@ data class WeatherResponse(
             else -> return "N"
         }
     }
+
+    data class Main(
+            val temp: Float = 0f,
+            val pressure: Int = 0,
+            val humidity: Int = 0
+    )
+
+    data class Weather(
+            val description: String = "",
+            val icon: String = ""
+    )
+
+    data class Wind(
+            val speed: Float = 0f,
+            val deg: Int = 0
+    )
+
+    data class Clouds(
+            val all: Int = 0
+    )
 }
-
-data class Main(
-        val temp: Float = 0f,
-        val pressure: Int = 0,
-        val humidity: Int = 0
-)
-
-data class Weather(
-        val main: String = "",
-        val icon: String = ""
-)
-
-data class Wind(
-        val speed: Float = 0f,
-        val deg: Int = 0
-)
-
-data class Clouds(
-        val all: Int = 0
-)
 
 
 

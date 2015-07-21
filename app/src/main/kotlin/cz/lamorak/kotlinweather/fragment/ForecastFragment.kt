@@ -12,11 +12,17 @@ import com.squareup.okhttp.OkHttpClient
 import com.squareup.okhttp.Request
 import cz.lamorak.kotlinweather.R
 import cz.lamorak.kotlinweather.adapter.ForecastAdapter
+import cz.lamorak.kotlinweather.api.ForecastResponse
+import cz.lamorak.kotlinweather.api.WeatherApi
+import cz.lamorak.kotlinweather.api.weatherApi
 import kotlinx.android.synthetic.clearFindViewByIdCache
 import kotlinx.android.synthetic.fragment_forecast.forecast_list
 import org.jetbrains.anko.*
+import retrofit.RestAdapter
 
 public class ForecastFragment : Fragment(), AnkoLogger {
+
+    var forecastResponse: ForecastResponse? = null
 
     companion object {
         val tag = "forecast_fragment"
@@ -44,9 +50,7 @@ public class ForecastFragment : Fragment(), AnkoLogger {
 
     fun loadForecast() {
         async {
-            val request = Request.Builder().url("http://api.openweathermap.org/data/2.5/weather?q=Prague").build()
-            val response = OkHttpClient().newCall(request).execute()
-
+            forecastResponse = weatherApi.forecast("Prague", 16)
             uiThread {
                 initView()
             }
@@ -60,6 +64,6 @@ public class ForecastFragment : Fragment(), AnkoLogger {
         }
         forecast_list.setHasFixedSize(true)
         forecast_list.setLayoutManager(GridLayoutManager(ctx, numColumns))
-        forecast_list.setAdapter(ForecastAdapter(ctx))
+        forecast_list.setAdapter(ForecastAdapter(ctx, forecastResponse?.list))
     }
 }
